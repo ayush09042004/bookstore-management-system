@@ -1,0 +1,83 @@
+/* ============================
+   Floating dropdown container
+   ============================ */
+.floating-collapse {
+    position: absolute;
+    top: 60px;
+    /* adjust according to navbar height */
+    right: 10px;
+    width: 220px;
+    background-color: #222;
+    border-radius: 10px;
+    padding: 10px 0;
+    z-index: 9999;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-20px);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Show the dropdown when active */
+.floating-collapse.show {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Nav links styling */
+.floating-collapse .nav-link {
+    color: #fff !important;
+    padding: 10px 20px;
+    display: block;
+    transition: background 0.2s;
+}
+
+.floating-collapse .nav-link:hover {
+    background-color: #444;
+    border-radius: 5px;
+}
+
+/* Button inside dropdown */
+.floating-collapse .btn {
+    width: 90%;
+    margin: 5px auto;
+    display: block;
+}
+
+/* Prevent flash during collapse */
+.floating-collapse.collapse:not(.show) {
+    display: block !important;
+    /* keep layout consistent for transform/opacity */
+    height: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+/* ============================
+   Desktop view adjustments
+   ============================ */
+@media (min-width: 992px) {
+    .floating-collapse {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+        box-shadow: none;
+        width: auto;
+        background: none;
+        padding: 0;
+        display: flex !important;
+        justify-content: flex-end;
+    }
+
+    .floating-collapse .nav-link {
+        padding: 0 15px;
+    }
+
+    .floating-collapse .btn {
+        width: auto;
+        margin: 0;
+    }
+}

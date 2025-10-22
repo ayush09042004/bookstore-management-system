@@ -1,0 +1,128 @@
+/* ================= General Body & Font ================= */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #111;
+  /* dark background for the whole app */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* ================= Select (Dropdown) Styling ================= */
+.form-select {
+  background-color: #222;
+  color: #fff;
+  border: 1px solid #444;
+}
+
+.form-select:focus {
+  outline: none;
+  box-shadow: 0 0 5px #888;
+}
+
+/* ================= Card Styling ================= */
+.card {
+  background-color: #222;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-title,
+.card-text {
+  margin: 0;
+  padding: 2px 0;
+}
+
+/* ================= Uniform Book Image Container ================= */
+.img-container {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #111;
+  border-radius: 8px;
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.img-container img:hover {
+  transform: scale(1.05);
+}
+
+/* ================= Filters Bar Styling ================= */
+.filters-bar {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #222;
+  border-radius: 8px;
+  padding: 10px;
+  gap: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  /* spacing from books grid */
+}
+
+.filter-item {
+  min-width: 150px;
+  max-width: 200px;
+  width: auto;
+  margin-bottom: 5px;
+}
+
+/* Price slider inside filters */
+.price-filter input[type="range"] {
+  width: 120px;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  .filters-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .filter-item {
+    width: 100%;
+  }
+
+  .price-filter input[type="range"] {
+    width: 100%;
+  }
+}
+
+/* ================= Optional Hover Effects ================= */
+.card:hover,
+.filters-bar:hover {
+  transition: all 0.3s ease;
+}
+
+/* ================= Navbar / General Layout Adjustments ================= */
+body>.container,
+body>.row {
+  padding-top: 80px;
+  /* space for fixed-top navbar */
+}
