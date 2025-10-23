@@ -24,7 +24,7 @@ app.use("/api/v1/books", bookRoute);
 app.use("/api/v1/cart", cartRoute);
 
 // Server
-const PORT = process.env.PORT3000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log("✅ SERVER STARTED SUCCESSFULLY on port " + PORT);
 });
