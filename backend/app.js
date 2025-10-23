@@ -25,6 +25,10 @@ app.use("/api/v1/cart", cartRoute);
 
 // Server
 const PORT = process.env.PORT || 3000;
+app.get("/", (req, res) => {
+    res.send("Server is running!");
+});
+
 app.listen(PORT, () => {
     console.log("✅ SERVER STARTED SUCCESSFULLY on port " + PORT);
 });
