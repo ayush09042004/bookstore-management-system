@@ -10,7 +10,7 @@ const Books = () => {
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get("http://localhost:3000/api/v1/books/getBooks"); // <--- FIXED
+        const res = await axios.get("https://srv-d3t82g9bh1hs73a9g6m0/api/v1/books/getBooks");
         setData(res.data.books);
         setSortedData(res.data.books);
       } catch (err) {
@@ -19,7 +19,6 @@ const Books = () => {
     };
     fetch();
   }, []);
-
 
   useEffect(() => {
     let sorted = [...Data];

@@ -15,7 +15,7 @@ const Signup = () => {
 
         try {
             // Make POST request to backend
-            const response = await axios.post("http://localhost:3000/api/v1/auth/signup", {
+            const response = await axios.post("https://srv-d3t82g9bh1hs73a9g6m0/api/v1/auth/signup", {
                 name,
                 email,
                 password,
