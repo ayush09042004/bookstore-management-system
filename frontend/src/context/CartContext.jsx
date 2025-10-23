@@ -11,7 +11,7 @@ export const CartProvider = ({ children }) => {
         const token = localStorage.getItem("token");
         if (!token) return;
         try {
-            const res = await axios.get("http://localhost:3000/api/v1/cart", {
+            const res = await axios.get("https://srv-d3t82g9bh1hs73a9g6m0/api/v1/cart", {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setCart(res.data.cart?.books || []);
@@ -27,7 +27,7 @@ export const CartProvider = ({ children }) => {
 
         try {
             await axios.post(
-                "http://localhost:3000/api/v1/cart/add",
+                "https://srv-d3t82g9bh1hs73a9g6m0/api/v1/cart/add",
                 { bookId, quantity },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -45,7 +45,7 @@ export const CartProvider = ({ children }) => {
 
         try {
             await axios.delete(
-                `http://localhost:3000/api/v1/cart/remove/${bookId}`,
+                `https://srv-d3t82g9bh1hs73a9g6m0/api/v1/cart/remove/${bookId}`,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             fetchCart(); // Fetch updated cart after removing
@@ -61,7 +61,7 @@ export const CartProvider = ({ children }) => {
 
         try {
             const res = await axios.post(
-                "http://localhost:3000/api/v1/cart/checkout",
+                "https://srv-d3t82g9bh1hs73a9g6m0/api/v1/cart/checkout",
                 {},
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -72,6 +72,7 @@ export const CartProvider = ({ children }) => {
             alert(err.response?.data?.message || "Checkout failed");
         }
     };
+
     // Decrease quantity of a book
     const decreaseQuantity = async (bookId) => {
         const token = localStorage.getItem("token");
@@ -79,7 +80,7 @@ export const CartProvider = ({ children }) => {
 
         try {
             await axios.patch(
-                `http://localhost:3000/api/v1/cart/decrease/${bookId}`,
+                `https://srv-d3t82g9bh1hs73a9g6m0/api/v1/cart/decrease/${bookId}`,
                 {},
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -88,7 +89,6 @@ export const CartProvider = ({ children }) => {
             console.error("Error decreasing quantity:", err.response?.data?.message || err.message);
         }
     };
-
 
     useEffect(() => {
         fetchCart(); // Fetch cart on mount
@@ -106,5 +106,4 @@ export const CartProvider = ({ children }) => {
             {children}
         </CartContext.Provider>
     );
-
 };
