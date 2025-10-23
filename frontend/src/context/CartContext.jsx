@@ -6,12 +6,14 @@ export const CartContext = createContext();
 export const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);
 
+    const BASE_URL = "https://bookstore-management-system-backend.onrender.com";
+
     // Fetch cart from backend
     const fetchCart = async () => {
         const token = localStorage.getItem("token");
         if (!token) return;
         try {
-            const res = await axios.get("https://srv-d3t82g9bh1hs73a9g6m0/api/v1/cart", {
+            const res = await axios.get(`${BASE_URL}/api/v1/cart`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setCart(res.data.cart?.books || []);
@@ -27,7 +29,7 @@ export const CartProvider = ({ children }) => {
 
         try {
             await axios.post(
-                "https://srv-d3t82g9bh1hs73a9g6m0/api/v1/cart/add",
+                `${BASE_URL}/api/v1/cart/add`,
                 { bookId, quantity },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -45,7 +47,7 @@ export const CartProvider = ({ children }) => {
 
         try {
             await axios.delete(
-                `https://srv-d3t82g9bh1hs73a9g6m0/api/v1/cart/remove/${bookId}`,
+                `${BASE_URL}/api/v1/cart/remove/${bookId}`,
                 { headers: { Authorization: `Bearer ${token}` } }
             );
             fetchCart(); // Fetch updated cart after removing
@@ -61,7 +63,7 @@ export const CartProvider = ({ children }) => {
 
         try {
             const res = await axios.post(
-                "https://srv-d3t82g9bh1hs73a9g6m0/api/v1/cart/checkout",
+                `${BASE_URL}/api/v1/cart/checkout`,
                 {},
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -80,7 +82,7 @@ export const CartProvider = ({ children }) => {
 
         try {
             await axios.patch(
-                `https://srv-d3t82g9bh1hs73a9g6m0/api/v1/cart/decrease/${bookId}`,
+                `${BASE_URL}/api/v1/cart/decrease/${bookId}`,
                 {},
                 { headers: { Authorization: `Bearer ${token}` } }
             );

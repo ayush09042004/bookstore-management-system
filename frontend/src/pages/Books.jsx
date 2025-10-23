@@ -7,10 +7,12 @@ const Books = () => {
   const [sortedData, setSortedData] = useState([]);
   const [filter, setFilter] = useState("");
 
+  const BASE_URL = "https://bookstore-management-system-backend.onrender.com";
+
   useEffect(() => {
     const fetch = async () => {
       try {
-        const res = await axios.get("https://srv-d3t82g9bh1hs73a9g6m0/api/v1/books/getBooks");
+        const res = await axios.get(`${BASE_URL}/api/v1/books/getBooks`);
         setData(res.data.books);
         setSortedData(res.data.books);
       } catch (err) {

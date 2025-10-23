@@ -10,12 +10,14 @@ const Signup = () => {
     const [role, setRole] = useState("user");
     const navigate = useNavigate();
 
+    const BASE_URL = "https://bookstore-management-system-backend.onrender.com";
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
             // Make POST request to backend
-            const response = await axios.post("https://srv-d3t82g9bh1hs73a9g6m0/api/v1/auth/signup", {
+            const response = await axios.post(`${BASE_URL}/api/v1/auth/signup`, {
                 name,
                 email,
                 password,

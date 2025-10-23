@@ -17,16 +17,24 @@ const AddBooks = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    await axios
-      .post("https://srv-d3t82g9bh1hs73a9g6m0/api/v1/add", Data)
-      .then((res) => alert(res.data.message));
-    setData({
-      bookname: "",
-      author: "",
-      description: "",
-      price: "",
-      image: "",
-    });
+
+    try {
+      const res = await axios.post(
+        "https://bookstore-management-system-backend.onrender.com/api/v1/add",
+        Data
+      );
+      alert(res.data.message);
+      setData({
+        bookname: "",
+        author: "",
+        description: "",
+        price: "",
+        image: "",
+      });
+    } catch (err) {
+      console.error(err);
+      alert(err.response?.data?.message || "Failed to add book");
+    }
   };
 
   console.log(Data);

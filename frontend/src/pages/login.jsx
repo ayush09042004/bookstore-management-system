@@ -8,12 +8,14 @@ const Login = () => {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
+    const BASE_URL = "https://bookstore-management-system-backend.onrender.com";
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         try {
             // Send login data to backend
-            const response = await axios.post("https://srv-d3t82g9bh1hs73a9g6m0/api/v1/auth/login", {
+            const response = await axios.post(`${BASE_URL}/api/v1/auth/login`, {
                 email,
                 password
             });
