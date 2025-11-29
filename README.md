@@ -1,68 +1,52 @@
-📚 Bookstore Management System (MERN Stack)
+# 📚 Bookstore Management System (MERN Stack)
 
-A simple and functional bookstore management web application built with the MERN stack.
-Users can browse books, manage their cart, and place orders. Admins can add, edit, and remove books.
-The focus of the project is clean code, basic e-commerce flow, and a clear split between frontend and backend.
+A simple and functional bookstore management application built with the MERN stack.  
+Users can browse books, manage their cart, and place orders.  
+Admins can add, edit, and remove books.  
+The project focuses on clean code and basic e-commerce flow.
 
-🔗 Live Demo
+---
+
+## 🔗 Live Demo
+Frontend: https://bookstore-management-system-frontend.onrender.com
+
+---
+
+## 🛠️ Tech Stack
 
 Frontend:
-https://bookstore-management-system-frontend.onrender.com
+- React
+- React Router
+- Axios
+- CSS / Tailwind
 
-🛠️ Tech Stack
-Frontend
+Backend:
+- Node.js
+- Express.js
+- MongoDB + Mongoose
+- JWT
+- bcrypt
 
-React
+Deployment:
+- Render
+- MongoDB Atlas
 
-React Router
+---
 
-Axios
+## ✨ Features
+- User signup & login  
+- JWT-based authentication  
+- Add, edit, delete books (Admin)  
+- View all books  
+- Add to / remove from cart  
+- Place orders  
+- REST API structure  
+- Responsive UI  
 
-CSS / Tailwind (depending on component usage)
+---
 
-Backend
+## 📁 Project Structure
 
-Node.js
-
-Express.js
-
-MongoDB + Mongoose
-
-JWT Authentication
-
-bcrypt for password hashing
-
-Tools & Deployment
-
-Render
-
-MongoDB Atlas
-
-Postman
-
-Git & GitHub
-
-✨ Features
-
-User registration and login
-
-JWT-based authentication
-
-Add, edit, delete books (Admin only)
-
-Browse all books with details
-
-Add to cart and remove from cart
-
-Place orders
-
-REST API structure
-
-Clean, responsive UI
-
-Basic error handling
-
-📁 Project Structure
 Bookstore/
 │
 ├── frontend/
@@ -82,72 +66,77 @@ Bookstore/
 │
 └── README.md
 
-🚀 Getting Started
-1. Clone the repository
-git clone https://github.com/rtlearn/bookstore-management-system
-cd bookstore-management-system
+---
 
-⚙️ Backend Setup
-2. Install backend dependencies
-cd backend
-npm install
-npm run server
+## 🚀 Getting Started
 
-Environment Variables
+1. Clone the repository  
+   git clone https://github.com/rtlearn/bookstore-management-system  
+   cd bookstore-management-system  
 
-Create a .env file:
+---
 
-MONGO_URI=your_mongo_url
-JWT_SECRET=your_secret_key
-PORT=5000
+## ⚙️ Backend Setup
 
-💻 Frontend Setup
-3. Install frontend dependencies
-cd frontend
-npm install
-npm start
+Install backend dependencies:  
+cd backend  
+npm install  
+npm run server  
 
-📡 API Endpoints Overview
-Auth
+Create a .env file inside backend:  
+MONGO_URI=your_mongo_url  
+JWT_SECRET=secret_key  
+PORT=5000  
 
-POST /api/auth/register
+---
 
-POST /api/auth/login
+## 💻 Frontend Setup
 
-Books
+Install frontend dependencies:  
+cd frontend  
+npm install  
+npm start  
 
-GET /api/books
+---
 
-POST /api/books
+## 📡 API Endpoints
 
-PUT /api/books/:id
+Auth:
+- POST /api/auth/register
+- POST /api/auth/login
 
-DELETE /api/books/:id
+Books:
+- GET /api/books
+- POST /api/books
+- PUT /api/books/:id
+- DELETE /api/books/:id
 
-Orders
+Orders:
+- POST /api/orders
+- GET /api/orders/:userId
 
-POST /api/orders
+---
 
-GET /api/orders/:userId
+## 🧪 Testing
 
-🧪 Testing
-
-Use Postman or Thunder Client.
-
-After logging in, copy your JWT token and send it in headers:
+Use Postman or Thunder Client.  
+After login, include your JWT token:
 
 Authorization: Bearer <token>
 
-📌 Future Improvements
+---
 
-Admin dashboard with stats
+## 📌 Future Improvements
+- Admin dashboard  
+- Payment gateway  
+- Book categories & filters  
+- Stock management  
+- Better UI  
+- Deployment to Vercel/Netlify  
 
-Payment integration
+---
 
-Filter and category system
+## 👤 Author
+Ayush Kumar Zindal  
+Email: ayushzindal@gmail.com  
 
-Stock management
-
-Better UI design
-
-Deployment on Vercel/Netlify
