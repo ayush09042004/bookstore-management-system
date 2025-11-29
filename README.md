@@ -1,8 +1,8 @@
 📚 Bookstore Management System (MERN Stack)
 
-A simple and functional bookstore management application built with the MERN stack.
-It allows users to browse books, manage their cart, place orders, and for admins to manage book data.
-The project focuses on clean code, basic e-commerce flows, and a clear separation between frontend and backend.
+A simple and functional bookstore management web application built with the MERN stack.
+Users can browse books, manage their cart, and place orders. Admins can add, edit, and remove books.
+The focus of the project is clean code, basic e-commerce flow, and a clear split between frontend and backend.
 
 🔗 Live Demo
 
@@ -10,22 +10,47 @@ Frontend:
 https://bookstore-management-system-frontend.onrender.com
 
 🛠️ Tech Stack
+Frontend
 
-Frontend: React, React Router, Axios, CSS (or Tailwind, based on components used)
-Backend: Node.js, Express.js, MongoDB, Mongoose
-Auth: JWT, bcrypt
-Deployment: Render, MongoDB Atlas
-Tools: Git, Postman
+React
+
+React Router
+
+Axios
+
+CSS / Tailwind (depending on component usage)
+
+Backend
+
+Node.js
+
+Express.js
+
+MongoDB + Mongoose
+
+JWT Authentication
+
+bcrypt for password hashing
+
+Tools & Deployment
+
+Render
+
+MongoDB Atlas
+
+Postman
+
+Git & GitHub
 
 ✨ Features
 
-User signup and login
+User registration and login
 
 JWT-based authentication
 
-Add / edit / delete books (Admin)
+Add, edit, delete books (Admin only)
 
-View all books with details
+Browse all books with details
 
 Add to cart and remove from cart
 
@@ -33,11 +58,11 @@ Place orders
 
 REST API structure
 
-Clean and responsive UI
+Clean, responsive UI
 
-Basic error handling on both frontend and backend
+Basic error handling
 
-📦 Project Structure
+📁 Project Structure
 Bookstore/
 │
 ├── frontend/
@@ -62,24 +87,27 @@ Bookstore/
 git clone https://github.com/rtlearn/bookstore-management-system
 cd bookstore-management-system
 
-2. Setup Backend
+⚙️ Backend Setup
+2. Install backend dependencies
 cd backend
 npm install
 npm run server
 
+Environment Variables
 
-Create a .env file inside the backend folder:
+Create a .env file:
 
 MONGO_URI=your_mongo_url
-JWT_SECRET=any_secret_key
+JWT_SECRET=your_secret_key
 PORT=5000
 
-3. Setup Frontend
+💻 Frontend Setup
+3. Install frontend dependencies
 cd frontend
 npm install
 npm start
 
-📡 API Overview
+📡 API Endpoints Overview
 Auth
 
 POST /api/auth/register
@@ -104,22 +132,22 @@ GET /api/orders/:userId
 
 🧪 Testing
 
-You can test API routes using Postman or Thunder Client.
-Login to receive a JWT token, then pass it in:
+Use Postman or Thunder Client.
+
+After logging in, copy your JWT token and send it in headers:
 
 Authorization: Bearer <token>
 
 📌 Future Improvements
 
-Admin dashboard with charts
+Admin dashboard with stats
 
 Payment integration
 
-Categories & filters
+Filter and category system
 
 Stock management
 
-Better UI components
+Better UI design
 
 Deployment on Vercel/Netlify
-
