@@ -45,28 +45,8 @@ Deployment:
 
 ---
 
-## 📁 Project Structure
 
-Bookstore/
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── hooks/
-│   │   └── utils/
-│   └── package.json
-│
-├── backend/
-│   ├── routes/
-│   ├── controllers/
-│   ├── models/
-│   ├── middleware/
-│   └── server.js
-│
-└── README.md
 
----
 
 ## 🚀 Getting Started
 
